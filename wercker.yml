@@ -8,7 +8,7 @@ build:
           sudo apt-get install -y software-properties-common
           sudo add-apt-repository ppa:ubuntu-wine/ppa
           sudo apt-get update
-          uname -a
-          sudo apt install -y wine-stable
+          sudo dpkg --add-architecture i386
+          sudo apt-get install wine1.8 winetricks
     - npm-install
     - npm-test
