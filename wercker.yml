@@ -4,7 +4,7 @@ build:
     - script:
         name: install wine
         code: |
-          sudo add-apt-repository ppa:ricotz/unstable
+          sudo apt-add-repository ppa:ricotz/unstable
           sudo apt-get update
           sudo apt install wine-stable
     - npm-install
