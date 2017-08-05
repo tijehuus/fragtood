@@ -12,18 +12,6 @@ try {
   console.warn("Application configuration not present: config.json");
 }
 
-console.log("Using config: ", JSON.stringify(config));
-
-// use jade template engine
-app.engine('jade', require('jade').__express);
-
-app.set('view engine', 'jade');
-app.set('views', process.cwd() + '/templates/views');
-
-// build app.js using browserify
-app.get('/app.js', browserify('./lib/app.js'));
-app.get('/search.js', browserify('./lib/search.js'));
-
 // compile sass files
 app.use(sassMiddleware({
   src:process.cwd() + '/templates/sass',
