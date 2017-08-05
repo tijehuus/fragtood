@@ -4,6 +4,7 @@ build:
     - script:
         name: install wine
         code: |
+          sudo add-apt-repository ppa:ubuntu-wine/ppa
           sudo apt-get update
           uname -a
           sudo apt install wine-stable
