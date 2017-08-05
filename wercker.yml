@@ -7,6 +7,6 @@ build:
           sudo dpkg --add-architecture i386
           sudo echo 'deb http://ftp.debian.org/debian jessie-backports main' >> /etc/apt/sources.list
           sudo apt-get update
-          sudo apt-get -t jessie-backports install wine
+          sudo apt-get -t jessie-backports install -y wine
     - npm-install
     - npm-test
