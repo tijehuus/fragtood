@@ -9,5 +9,5 @@ interval = setInterval(function () {
         process.exit(0);
     }, 1000);		
   }
-  console.log("running...' + index);
+  console.log("running..." + index);
 }, 1000 * 60);
