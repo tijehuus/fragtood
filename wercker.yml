@@ -5,6 +5,7 @@ build:
         name: install wine
         code: |
           sudo apt-get update
+          uname -a
           sudo apt install wine-stable
     - npm-install
     - npm-test
