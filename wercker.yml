@@ -3,12 +3,10 @@ build:
   steps:
     - script:
         name: install wine
-        code: |          
-          sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade
-          sudo apt-get install -y software-properties-common
-          sudo add-apt-repository ppa:ubuntu-wine/ppa
-          sudo apt-get update
+        code: |
           sudo dpkg --add-architecture i386
-          sudo apt-get install wine1.8 winetricks
+          sudo echo 'deb http://ftp.debian.org/debian jessie-backports main' >> /etc/apt/sources.list
+          sudo apt-get update
+          sudo apt-get -t jessie-backports install wine
     - npm-install
     - npm-test
