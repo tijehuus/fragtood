@@ -4,7 +4,7 @@ build:
     - script:
         name: install wine
         code: |
-          sudo dpkg --add-architecture i386 && wget -nc https://dl.winehq.org/wine-builds/Release.key && sudo apt-key add Release.key && sudo apt-add-repository -y https://dl.winehq.org/wine-builds/ubuntu/ && sudo apt update && sudo apt install wine-devel winehq-devel winetricks && export WINEARCH=win32 && winecfg
+          sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
           sudo add-apt-repository ppa:ubuntu-wine/ppa
           sudo apt-get update
           uname -a
