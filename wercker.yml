@@ -1,8 +1,5 @@
 box: node:7
 build:
   steps:
-    - script:
-          name: init proc
-          code: sudo mount -o -v remount,rw,hidepid=2 /proc
     - npm-install
     - npm-test
