@@ -5,8 +5,9 @@ build:
         name: install vb
         code: |
           uname -a
-          sudo sh -c "echo 'deb http://httpredir.debian.org/debian/ jessie main contrib' >> /etc/apt/sources.list"
+          sudo sh -c "echo 'deb http://ftp.debian.org/debian jessie-backports main contrib' >> /etc/apt/sources.list"
           sudo apt-get update
-          sudo apt-get install linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,') virtualbox
+          apt-get install linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,')
+          apt-get -t jessie-backports install virtualbox
     - npm-install
     - npm-test
