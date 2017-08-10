@@ -4,11 +4,10 @@ build:
     - script:
         name: install vb
         code: |
-          sudo sh -c "echo 'deb http://ppa.launchpad.net/person/ppa/ubuntu karmic main' >> /etc/apt/sources.list"
-          wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
-          sudo apt-get update && sudo apt-get install -y linux-headers-$(uname -r) build-essential virtualbox-5.1 dkms
-          cd /tmp && wget http://download.virtualbox.org/virtualbox/5.1.0/Oracle_VM_VirtualBox_Extension_Pack-5.1.0-108711.vbox-extpack
-          sudo VBoxManage extpack install -y Oracle_VM_VirtualBox_Extension_Pack-5.1.0-108711.vbox-extpack
-          sudo adduser administrator vboxusers
+          sudo sh -c "echo 'deb http://download.virtualbox.org/virtualbox/debian stretch contrib' >> /etc/apt/sources.list"
+          curl -O https://www.virtualbox.org/download/oracle_vbox_2016.asc
+          sudo apt-key add oracle_vbox_2016.asc
+          sudo apt-get update
+          sudo apt-get install virtualbox-5.1
     - npm-install
     - npm-test
