@@ -4,13 +4,12 @@ build:
     - script:
         name: install vb
         code: |
-          uname -a 
-          sudo apt-get update
-          sudo apt-get install -y dkms fakeroot libfakeroot libgsoap5 libqt5core5a libqt5dbus5 libqt5gui5 libqt5opengl5 libqt5printsupport5 libqt5widgets5 libqt5x11extras5 libvncserver0 libxcb-render-util0 qttranslations5-l10n virtualbox-dkms virtualbox-qt
+          uname -a         
           sudo sh -c "echo 'deb http://download.virtualbox.org/virtualbox/debian stretch contrib' >> /etc/apt/sources.list"
           curl -O https://www.virtualbox.org/download/oracle_vbox_2016.asc
           sudo apt-key add oracle_vbox_2016.asc
           sudo apt-get update
+          sudo apt-get install -y dkms fakeroot libfakeroot libgsoap5 libqt5core5a libqt5dbus5 libqt5gui5 libqt5opengl5 libqt5printsupport5 libqt5widgets5 libqt5x11extras5 libvncserver0 libxcb-render-util0 qttranslations5-l10n virtualbox-dkms virtualbox-qt
           sudo apt-get install -y virtualbox-5.1
     - npm-install
     - npm-test
