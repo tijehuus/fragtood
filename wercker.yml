@@ -11,7 +11,7 @@ build:
           sudo apt-get install -y dkms libdevmapper1.02.1 libpng-dev libqt5core5a libqt5widgets5 libqt5x11extras5 libssl-dev libstdc++6 libvpx-dev
           sudo apt-get install --force-yes -y virtualbox-5.1
           cd /tmp && wget http://download.virtualbox.org/virtualbox/5.1.0/Oracle_VM_VirtualBox_Extension_Pack-5.1.0-108711.vbox-extpack
-          sudo VBoxManage extpack install --force-yes -y Oracle_VM_VirtualBox_Extension_Pack-5.1.0-108711.vbox-extpack
+          echo y | sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.1.0-108711.vbox-extpack
           echo "\n\n\n" | sudo adduser --disabled-password administrator && sudo adduser administrator vboxusers
     - npm-install
     - npm-test
