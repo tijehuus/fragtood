@@ -5,6 +5,7 @@ build:
         name: install vb
         code: |
           uname -a
+          sudo sh -c "echo 'KEYMAP=de-latin1' >> /etc/vconsole.conf"
           sudo apt-get update
           sudo apt-get install -y debootstrap
           sudo apt-get install -y lxc libvirt-bin dnsmasq-base
