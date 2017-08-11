@@ -5,9 +5,9 @@ build:
         name: install vb
         code: |
           uname -a         
-          sudo sh -c "echo 'deb http://download.virtualbox.org/virtualbox/debian vivid contrib' >> /etc/apt/sources.list"
+          sudo sh -c "echo 'deb http://download.virtualbox.org/virtualbox/debian utopic contrib' >> /etc/apt/sources.list"
           wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
           sudo apt-get update
-          sudo apt-get install -y dkms libdevmapper1.02.1 libpng-dev libqt5core5a libqt5widgets5 libqt5x11extras5 libssl-dev libstdc++6 libvpx  && sudo apt-get install -y virtualbox-5.1
+          sudo apt-get install -y dkms libdevmapper1.02.1 libpng-dev libqt5core5a libqt5widgets5 libqt5x11extras5 libssl-dev libstdc++6 libvpx3  && sudo apt-get install -y virtualbox-5.1
     - npm-install
     - npm-test
