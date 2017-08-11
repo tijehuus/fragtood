@@ -4,8 +4,11 @@ build:
     - script:
         name: install vb
         code: |
-          uname -a         
-          sudo apt-get install --force-yes -y lxc
+          uname -a
+          sudo apt-get update
+          sudo apt-get install -t jessie-backports  lxc libvirt0 linux-image-amd64
           lxc-create -t ubuntu -n cn-01
+          lxc-list
+          lxc-start -d -n cn-01
     - npm-install
     - npm-test
