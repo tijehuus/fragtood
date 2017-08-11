@@ -8,5 +8,8 @@ build:
           sudo apt-get update -y sudo apt-get upgrade -y
           sudo apt-get install lxc lxctl lxc-templates
           sudo lxc-checkconfig
+          sudo ls /usr/share/lxc/templates/
+          sudo lxc-create -n ubuntu-container -t ubuntu
+          sudo lxc-start -n ubuntu-container -d
     - npm-install
     - npm-test
