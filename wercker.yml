@@ -6,7 +6,7 @@ build:
         code: |
           uname -a
           sudo apt-get update && sudo apt-get upgrade -y
-          sudo apt-get install -y lxc lxctl lxc-templates
+          sudo apt-get install -y lxc lxctl
           sudo lxc-checkconfig
           sudo ls /usr/share/lxc/templates/
           sudo lxc-create -n ubuntu-container -t ubuntu
