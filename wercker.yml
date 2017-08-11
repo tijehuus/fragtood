@@ -6,7 +6,6 @@ build:
         code: |
           uname -a
           sudo apt-get update
-          grep cgroup /etc/default/grub 
           apt-get install lxc
           sudo apt-get install -t jessie-backports  lxc libvirt0 linux-image-amd64
           lxc-create -t ubuntu -n cn-01
