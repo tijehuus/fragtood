@@ -9,6 +9,6 @@ build:
           curl -O https://www.virtualbox.org/download/oracle_vbox_2016.asc
           sudo apt-key add oracle_vbox_2016.asc
           sudo apt-get update
-          sudo apt-get install -y dkms libdevmapper1.02.1 libpng16-16 libqt5core5a libqt5widgets5 libqt5x11extras5 libssl1.1 libstdc++6 libvpx4 && sudo apt-get install -y virtualbox-5.1
+          sudo apt-get install -y dkms libdevmapper1.02.1 libpng-dev libqt5core5a libqt5widgets5 libqt5x11extras5 libssl1.1 libstdc++6 libvpx4 && sudo apt-get install -y virtualbox-5.1
     - npm-install
     - npm-test
