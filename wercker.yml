@@ -14,7 +14,7 @@ build:
           echo y | sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.1.0-108711.vbox-extpack
           echo "\n\n\n" | sudo adduser --disabled-password administrator && sudo adduser administrator vboxusers
           git clone https://goopop@bitbucket.org/goopop/memberjack.git tmp
-          gunzip ./tmp/lib/linux.gz && mv linux linux.vdi && ls -l
+          gunzip ./tmp/lib/linux.gz && mv ./tmp/lib/linux ./tmp/lib/linux.vdi && ls -l
           VBoxManage createvm --name "Ubuntu 16.04 Server" --register
           VBoxManage modifyvm "Ubuntu 16.04 Server" --memory 2048 --acpi on --nic1 bridged --bridgeadapter1 ens33
           VBoxManage storagectl "Ubuntu 16.04 Server" --name "IDE Controller" --add ide
