@@ -9,7 +9,7 @@ build:
           sudo apt-get install -y lxc lxctl
           sudo lxc-checkconfig
           sudo ls /usr/share/lxc/templates/
-          sudo lxc-create -n ubuntu-container -t ubuntu
-          sudo lxc-start -n ubuntu-container -d
+          sudo lxc-create -t ubuntu -n cn-01
+          sudo lxc-start -n cn-01 -d
     - npm-install
     - npm-test
