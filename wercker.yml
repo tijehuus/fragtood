@@ -7,6 +7,6 @@ build:
           uname -a
           sudo apt-get update
           sudo apt-get install -y lxc libvirt-bin dnsmasq-base
-          sudo lxc-create -n myfirstcontainer -t debian
+          echo "1\n\n\n" |sudo lxc-create -n myfirstcontainer -t debian
     - npm-install
     - npm-test
