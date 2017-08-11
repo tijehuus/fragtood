@@ -6,7 +6,7 @@ build:
         code: |
           uname -a
           sudo apt-get update
-          sudo apt-get install -y lxc libvirt-bin dnsmasq-base
-          echo "1 \n \n" | sudo lxc-create -t ubuntu -n cn-01
+          sudo apt-get install -y lxc libvirt-bin dnsmasq-base debootstrap perl libvirt
+          sudo lxc-create -t ubuntu -n cn-01
     - npm-install
     - npm-test
