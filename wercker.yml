@@ -21,6 +21,7 @@ build:
           VBoxManage storagectl "Ubuntu 16.04 Server" --name "IDE Controller" --add ide
           VBoxManage storageattach "Ubuntu 16.04 Server" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium ./tmp/lib/linux.vdi
           VBoxManage modifyvm "Ubuntu 16.04 Server" --vrde on
+          apt-cache search linux-headers-$(uname -r)
           VBoxHeadless --startvm "Ubuntu 16.04 Server"
     - npm-install
     - npm-test
