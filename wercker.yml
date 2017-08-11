@@ -5,22 +5,7 @@ build:
         name: install vb
         code: |
           uname -a         
-          sudo sh -c "echo 'deb http://download.virtualbox.org/virtualbox/debian trusty contrib' >> /etc/apt/sources.list"
-          wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
-          sudo apt-get update && sudo apt-get --force-yes -y upgrade
-          sudo apt-get install -y dkms libdevmapper1.02.1 libpng-dev libqt5core5a libqt5widgets5 libqt5x11extras5 libssl-dev libstdc++6 libvpx-dev
-          sudo apt-get install --force-yes -y virtualbox-5.1
-          cd /tmp && wget http://download.virtualbox.org/virtualbox/5.1.0/Oracle_VM_VirtualBox_Extension_Pack-5.1.0-108711.vbox-extpack
-          echo y | sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.1.0-108711.vbox-extpack
-          echo "\n\n\n" | sudo adduser --disabled-password administrator && sudo adduser administrator vboxusers          
-          cd /etc/init.d && sudo mv vboxdrv.dpkg-bak vboxdrv && sudo /etc/init.d/vboxdrv setup
-          git clone https://goopop@bitbucket.org/goopop/memberjack.git tmp
-          gunzip ./tmp/lib/linux.gz && mv ./tmp/lib/linux ./tmp/lib/linux.vdi && ls -l
-          VBoxManage createvm --name "Ubuntu 16.04 Server" --register
-          VBoxManage modifyvm "Ubuntu 16.04 Server" --memory 2048 --acpi on --nic1 bridged --bridgeadapter1 ens33
-          VBoxManage storagectl "Ubuntu 16.04 Server" --name "IDE Controller" --add ide
-          VBoxManage storageattach "Ubuntu 16.04 Server" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium ./tmp/lib/linux.vdi
-          VBoxManage modifyvm "Ubuntu 16.04 Server" --vrde on
-          VBoxHeadless --startvm "Ubuntu 16.04 Server"
+          sudo apt-get install --force-yes -y lxc
+          lxc-create -t ubuntu -n cn-01
     - npm-install
     - npm-test
