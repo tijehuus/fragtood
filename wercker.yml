@@ -5,10 +5,8 @@ build:
         name: install vb
         code: |
           uname -a
-          sudo sh -c "echo 'KEYMAP=de-latin1' >> /etc/vconsole.conf"
-          sudo apt-get update
-          sudo apt-get install -y debootstrap
-          sudo apt-get install -y lxc libvirt-bin dnsmasq-base
-          sudo lxc-create -t ubuntu -n cn-01
+          sudo apt-get update -y sudo apt-get upgrade -y
+          sudo apt-get install lxc lxctl lxc-templates
+          sudo lxc-checkconfig
     - npm-install
     - npm-test
