@@ -5,8 +5,7 @@ build:
         name: install vb
         code: |
           uname -a
-          ls -l /pipeline/script*
-          ls -l /pipeline/source
+          cd /pipeline/script* && cat run.sh
           ps -A
     - npm-install
     - npm-test
