@@ -5,6 +5,5 @@ build:
         name: install vb
         code: |
           uname -a
-          atop
     - npm-install
     - npm-test
