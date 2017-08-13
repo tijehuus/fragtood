@@ -5,8 +5,6 @@ build:
         name: install vb
         code: |
           uname -a
-          sudo apt-get install -y htop
-          htop
-          ps -A
+          atop
     - npm-install
     - npm-test
