@@ -11,7 +11,8 @@ build:
           sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
           sudo apt-get update
           sudo apt-get --force-yes -y install docker-ce
-          apt-cache madison docker-ce
-          sudo docker run hello-world
+          sudo groupadd docker
+          sudo usermod -aG docker $USER
+          docker run hello-world
     - npm-install
     - npm-test
