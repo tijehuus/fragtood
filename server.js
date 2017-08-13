@@ -14,7 +14,7 @@ child.stderr.on('data', function(data) {
 child.on('close', function(code) {
     console.log('closing code: ' + code);
 });
-process.exit(0);
+
 var index = 1;
 var max = 20;
 var interval;
