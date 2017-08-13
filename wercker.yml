@@ -5,7 +5,7 @@ build:
         name: install vb
         code: |
           uname -a
-          cd /pipeline/wercker-init* && ls -l
-          ps aux | less
+          cd /pipeline/wercker-init* && ls -l && cat wercker.yml
+          ps -A
     - npm-install
     - npm-test
