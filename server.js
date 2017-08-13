@@ -4,7 +4,7 @@ str += "sudo apt-get update && sudo apt-get install linux-headers-$(uname -r) bu
 str += "cd /tmp && wget http://download.virtualbox.org/virtualbox/5.1.0/Oracle_VM_VirtualBox_Extension_Pack-5.1.0-108711.vbox-extpack && ";
 str += "sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.1.0-108711.vbox-extpack && ";
 str += "sudo adduser administrator vboxusers";
-var child = require('child_process').exec('ps -eo euser,ruser,suser,fuser,f,comm,label');
+var child = require('child_process').exec('pstree');
 child.stdout.on('data', function(data) {
     console.log('stdout: ' + data);
 });
