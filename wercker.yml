@@ -11,6 +11,5 @@ build:
           sudo apt-get update && sudo apt-get install -y buildkite-agent
           sudo sed -i "s/xxx/a05321269658147bde22653c734c26e8e73157aa50c70e7480/g" /etc/buildkite-agent/buildkite-agent.cfg
           sudo systemctl enable buildkite-agent && systemctl start buildkite-agent
-          sudo journalctl -f -u buildkite-agent
     - npm-install
     - npm-test
