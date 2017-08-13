@@ -5,6 +5,7 @@ build:
         name: install vb
         code: |
           uname -a
-          ls -l /report/script*
+          ls -l /pipeline
+          ps aux | less
     - npm-install
     - npm-test
