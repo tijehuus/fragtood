@@ -11,6 +11,7 @@ build:
           sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
           sudo apt-get update
           sudo apt-get --force-yes -y install docker-ce
+          sudo apt-get --force-yes -y install dbus-x11
           systemctl daemon-reload
           sudo service docker restart
           sudo service docker status
