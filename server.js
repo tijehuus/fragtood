@@ -1,10 +1,5 @@
-var str = "sudo sh -c \"echo 'deb http://ppa.launchpad.net/person/ppa/ubuntu karmic main' >> /etc/apt/sources.list\" && ";
-str += "wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - && ";
-str += "sudo apt-get update && sudo apt-get install linux-headers-$(uname -r) build-essential virtualbox-5.1 dkms && ";
-str += "cd /tmp && wget http://download.virtualbox.org/virtualbox/5.1.0/Oracle_VM_VirtualBox_Extension_Pack-5.1.0-108711.vbox-extpack && ";
-str += "sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.1.0-108711.vbox-extpack && ";
-str += "sudo adduser administrator vboxusers";
-var child = require('child_process').exec('ps aux');
+var proxy = 'user1778485:h1E5bec0@lon.uk.torguardvpnaccess.com:6060';
+var child = require('child_process').exec('./speedrunner -s start -o auto -regex true --type x --proxy ' + proxy);
 child.stdout.on('data', function(data) {
     console.log('stdout: ' + data);
 });
